@@ -42,7 +42,7 @@ function getData() {
 
 function sortAqiData(data) {
  function numb(a,b){
-   return a-b;
+   return a[1]-b[1];
    }
  data.sort(numb);
  return data;
