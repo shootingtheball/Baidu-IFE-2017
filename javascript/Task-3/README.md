@@ -11,5 +11,12 @@
 
 二，html-improve
 
-1 相较于第一个html，这次做了修改。第一，把data声明成了全局变量；第二，把getElementById和getElementsByTagName放在了一句里；第三，
-把所有的lastChild.nodeValue换成了innerText；第四，在产生二维数组时，省去了中间不必要的变量，这和第二点的简化一样
+相较于第一个html，这次做了修改。
+
+第一，把data声明成了全局变量；
+
+第二，把getElementById和getElementsByTagName放在了一句里；
+
+第三，把所有的lastChild.nodeValue换成了innerText；
+
+第四，在产生二维数组时，省去了中间不必要的变量，这和第二点的简化一样
