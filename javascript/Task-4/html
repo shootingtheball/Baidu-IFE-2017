@@ -100,11 +100,11 @@
 
     ul.onmouseover = function(){
      var li = document.getElementsByTagName("li");
-
-        li[i].onclick = function(){
-          ul.removeChild(this);
-        }
-    
+     for (var i = 0; i < li.length; i++) {
+       li[i].onclick = function(){
+         ul.removeChild(this);
+       }
+     }
     }
     </script>
   </body>
