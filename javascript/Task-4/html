@@ -36,6 +36,7 @@
       display: inline;
       background: red;
       margin:  0 5px;
+      width: 30px;
     }
     </style>
   </head>
@@ -54,6 +55,7 @@
     var ul = document.createElement("ul");
     document.body.appendChild(ul);
 
+
     function viewNumOne(){
       var li = document.createElement("li");
       li.innerHTML = text.value;
@@ -66,10 +68,8 @@
       }else {
         ul.insertBefore(li,ul.firstChild);
       }
-        console.log(ul.firstChild);
       li.className = "li";
     }
-
     btn[0].onclick = viewNumOne;
 
     function viewNumTwo(){
@@ -87,14 +87,25 @@
 
     function delNumOne(){
       ul.removeChild(ul.firstChild);
+      alert(ul.firstChild.innerHTML);
     }
     btn[2].onclick = delNumOne;
 
     function delNumTwo(){
-        ul.removeChild(ul.lastChild)
+        ul.removeChild(ul.lastChild);
+        alert(ul.lastChild.innerHTML);
     }
     btn[3].onclick = delNumTwo;
 
+
+    ul.onmouseover = function(){
+     var li = document.getElementsByTagName("li");
+
+        li[i].onclick = function(){
+          ul.removeChild(this);
+        }
+    
+    }
     </script>
   </body>
 </html>
