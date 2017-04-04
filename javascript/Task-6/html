@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE-6</title>
+    <style media="screen">
+      main{
+        display: flex;
+      }
+      textarea{
+        height: 80px;
+        width: 300px;
+      }
+      main div{
+        height: 30px;
+        background: #e4d4d4;
+        margin-right: 10px;
+        min-width: 30px;
+        text-align: center;
+      }
+      .after{
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="name" rows="8" cols="80"></textarea>
+    <button type="button" name="button">插入</button>
+    <button type="button" name="button">删除</button>
+    <br>
+    <input type="text" name="" value=""></input>
+    <button type="button" name="button">查询</button>
+    <main>
+    </main>
+  </body>
+
+  <script type="text/javascript">
+  var text = document.getElementsByTagName("textarea")[0];
+  var ipt = document.getElementsByTagName("input")[0];
+  var btn = document.getElementsByTagName("button");
+  var main = document.getElementsByTagName("main")[0];
+  var saveData=[];
+
+  btn[0].onclick=function(){
+    var vle = text.value.trim();
+    var data = vle.split(/[^0-9a-zA-Z\u4e00-\u9fa5]+/).filter(function(x){
+      return  x!==null && x!==undefined;
+    })
+
+    for (var i = 0; i < data.length; i++) {
+      saveData.push(data[i]);
+    };
+
+    var kk = saveData.map(function(x){
+    return "<div>"+x+"</div>";
+    }).join("");
+    main.innerHTML =kk;
+  }
+
+  btn[2].onclick = function(){
+    var vle = ipt.value.trim();
+    console.log(vle);
+    var kk = saveData.map(function(x){
+       x.replace(new RegExp(vle,"g"),"<span class='after'>"+x+"</span>");
+       return '<div>' + x + '</div>';
+    })
+    console.log(kk);
+    main.innerHTML =kk;
+  }
+
+  </script>
+</html>
