@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>yao-1</title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <table>
+        <tr>
+          <td>名称</td>
+          <td><input type="text" id="inp"></td>
+          <td><input type="button" name="" value="验证" id="btn"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id="text">必填，长度为4-16个字符</td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+
+    <script type="text/javascript">
+    var $ =function(x){
+      return document.querySelector(x);}
+        var bt = $("#btn");
+    bt.addEventListener("click",main,false);
+
+    function main(){
+      var str = $("#inp").value;
+
+    if (str.length==0) {
+      $("#text").innerHTML ="输入不能为空";
+      $("#text").style.color = "red";
+    }
+    else if (4<=count(str)&&count(str)<=12) {
+      $("#text").innerHTML ="输入正确";
+      $("#text").style.color = "blue";
+    }
+    else {
+      $("#text").innerHTML ="输入不正确";
+      $("#text").style.color = "red";
+    }
+
+    function count(str){
+      var countlength = 0;
+      for (var i = 0; i < str.length; i++) {
+      var a = str.charCodeAt(i)
+      if (0<=a&&a<=128) {
+        countlength +=1;
+      }
+      else {
+        countlength +=2;
+       }
+      }
+      return countlength;
+    }
+  };
+    </script>
+  </body>
+</html>
