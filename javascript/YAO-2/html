@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>yao-2</title>
+    <style media="screen">
+    *{
+      padding: 0;
+      margin: 0;
+    }
+     body{
+       position: relative;
+       font-size: 18px;
+     }
+     form{
+       position: absolute;
+       left: 20%;
+       border: 1px solid black;
+     }
+     input{
+       margin: 10px 30px;
+       height: 25px;
+       width: 230px;
+     }
+      label{
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+      }
+      p{
+        visibility: hidden;
+        display: block;
+        width: 230px;
+        margin-left: 136px;
+      }
+      tr td{
+        text-align: right;
+      }
+      .submit{
+        width: 50px;
+        margin-left: 120px;
+      }
+      #submit{
+        width: 50px;
+        margin-left: 140px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <section>
+        <label for="name">名称</label>
+        <input type="text" name="" value="" id="name">
+        <p>请输入4-16位的字符</p>
+      </section>
+      <section>
+        <label for="password">密码</label>
+        <input type="password" name="" value="">
+        <p>请填写4-16位的中英文密码</p>
+      </section>
+      <section>
+        <label for="passwor.d2">确认密码</label>
+        <input type="password" name="" value="">
+        <p>请确认你填的密码</p>
+      </section>
+      <section>
+        <label for="email">邮箱</label>
+        <input type="text" name="" value="">
+        <p>请填写正确的邮箱</p>
+      </section>
+      <button type="button" name="button" id="submit"></button>
+    </form>
+    <script type="text/javascript">
+      //选取元素
+      var form = document.getElementsByTagName("form")[0];
+      var ainput = document.getElementsByTagName("input")[0],
+      binput = document.getElementsByTagName("input")[1],
+      cinput = document.getElementsByTagName("input")[2],
+      dinput = document.getElementsByTagName("input")[3],
+      ap = document.getElementsByTagName("p")[0],
+      bp = document.getElementsByTagName("p")[1],
+      cp = document.getElementsByTagName("p")[2],
+      dp = document.getElementsByTagName("p")[3];
+      var submit = document.getElementById("submit")
+
+      //添加事假句柄函数
+      function addhander(node,event,func){
+        if (node.addEventListener) {
+          node.addEventListener(event,func);
+        }else if (node.attachEvent) {
+          node.attachEvent("on"+event,func);
+        }else {
+          node["on"+event]=func;
+        }
+      }
+
+      //获取字符串字节长度函数
+      function getLength(str){
+        return str.replace(/[^\x00-xff]/g,"aa").length;
+      }
+
+      //有关第一个输入框姓名框的事件
+      addhander(ainput,"focus",function(){
+        ap.style.visibility = "visible";
+      })
+
+      addhander(ainput,"blur",funcinpt);
+
+      function funcinpt(){
+        var len = getLength(ainput.value);
+        var re = /[^\w\u4e00-\u9fa5]/g;
+        if (len>16 ||4>len||re.test(ainput.value)) {
+          ap.innerHTML = "输入有误";
+          ap.style.color = "red";
+          ainput.style.bordercolor = "red";
+        }else {
+          ap.innerHTML = "输入正确";
+          ap.style.color = "green"
+          ainput.style.bordercolor = "green"
+        }
+      }
+
+      //有关第二个输入框密码框的事件
+      addhander(binput,"focus",function(){
+        bp.style.visibility = "visible";
+      })
+
+       addhander(binput,"blur",funcpass1);
+
+       function funcpass1(){
+          var len = getLength(binput.value);
+          var re = /[^\w]/g;
+          if (len>16 ||4>len||re.test(binput.value)) {
+            bp.innerHTML = "输入有误";
+            bp.style.color = "red";
+            binput.style.bordercolor = "red";
+          }else {
+            bp.innerHTML = "输入正确";
+            bp.style.color = "green"
+            binput.style.bordercolor = "green"
+          }
+          password = binput.value;
+       }
+
+      //有关第三个输入框密码框的事件
+      addhander(cinput,"focus",function(){
+        cp.style.visibility = "visible";
+      })
+
+      addhander(cinput,"blur",funcpass2)
+
+      function funcpass2() {
+
+          if (password != cinput.value) {
+            console.log(password);
+            console.log(cinput.value);
+            cp.innerHTML = "输入有误";
+            cp.style.color = "red";
+            cinput.style.bordercolor = "red";
+          }else {
+            cp.innerHTML = "输入正确";
+            cp.style.color = "green"
+            cinput.style.bordercolor = "green"
+          }
+      }
+
+      //最后的提交
+      addhander(submit,"click",function(){
+        funcinpt();
+        funcpass1();
+        funcpass2();
+        })
+
+    </script>
+  </body>
+</html>
