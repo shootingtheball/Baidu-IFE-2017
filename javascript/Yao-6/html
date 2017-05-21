@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI浮层</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		main{
+			height: 1500px;
+			position: relative;
+		}
+		header{
+			height: 50px;
+			background-color: black;
+			color: white;
+		}
+		header p {
+			font-size: 1.3rem;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			margin-left: 200px;
+		}
+		header p:hover{
+			background-color: #ccc;
+			cursor: pointer;
+			color: black;
+		}
+		section{
+			background-color: white;
+			width: 300px;
+			height: 230px;
+			border:2px solid #999;
+			border-radius: 2%;	
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+		article{
+			background-color: rgba(100,150,200,0.3);
+			opacity:1;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+		}
+		section>div:nth-child(2){
+			text-align: center;
+			height: 180px;
+		}
+		section>div{
+			font-size: 1.2rem;
+			height: 40px;
+			line-height: 40px;
+			padding-left: 10px;
+		}
+		section input{
+			width:190px;
+			height: 1.5rem;
+		}
+		section input:nth-child(1){
+			margin-top: 1.5rem;
+		}
+		section input:nth-child(2){
+			margin-top: 1.5rem;
+		}
+		section button{
+			border: 0;
+			width: 195px;
+			cursor: pointer;
+			height: 1.5rem;
+			background-color: #027bd6;
+			color: white;	
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<header>
+			<p id="signup">登录</p>
+		</header>
+		<p>昔有爱人<br>今已去 <br>携他而去 <br>把它交给党<br>远山笑你 <br>滚滚去 
+			<br>我会稳住我自己
+			<br>像昨天 
+			<br>吻住你
+			<br>今天我 
+			<br>来举杯 
+			<br>喝醉那 
+			<br>所有的魔鬼 
+		</p>
+		<article>
+		</article>
+		<section>
+			<div id="drag">
+				<p>登录</p>
+				<div></div>
+			</div>
+			<div>
+				<input type="" name="" placeholder="输入用户名">
+				<input type="" name="" placeholder="输入密码"><br>
+				<button>登录</button>
+			</div>	
+		</section>
+	</main>
+	<script type="text/javascript" >
+		var article = document.getElementsByTagName("article")[0];
+		var section = document.getElementsByTagName("section")[0];
+		console.log();
+		var signup = document.getElementById("signup");
+		var drag = document.getElementById("drag");
+
+		article.addEventListener("click",function(){
+			this.style.visibility="hidden";
+			section.style.visibility="hidden";
+		});
+
+		signup.addEventListener("click",function(){
+			article.style.visibility="visible";
+			section.style.visibility="visible";
+		})
+
+		var mx,my,sx,sy;
+		function abw(event){
+			mx1 = event.clientX;
+			my1 = event.clientY;
+			section.style.left= (sx+(mx1-mx))+"px";
+			console.log(section.style.left);
+			section.style.top= sy +(my1-my)+"px";
+			drag.style.cursor = ""
+		}
+		function abq(event){
+			mx = event.clientX;
+			my = event.clientY;
+			sx = section.offsetLeft;
+			sy = section.offsetTop;	
+			drag.addEventListener("mousemove",abw)
+		}
+
+		drag.addEventListener("mousedown",abq)
+
+		drag.addEventListener("mouseup",function(){
+			drag.removeEventListener("mousemove",abw)
+		})
+	</script>
+
+</body>
+</html>
