@@ -43,8 +43,8 @@
 
 			figure::before{
 				content: "";
-				border-left: 3px solid white;
-				border-right: 3px solid white;
+				border-left: 3px solid black;
+				border-right: 3px solid black;
 				position: absolute;
 				left: 50%;
 				top:50%;
@@ -56,8 +56,8 @@
 
 			figure::after{
 				content: "";
-				border-top: 3px solid white;
-				border-bottom: 3px solid white;
+				border-top: 3px solid black;
+				border-bottom: 3px solid black;
 				position: absolute;
 				left: 50%;
 				top:50%;
