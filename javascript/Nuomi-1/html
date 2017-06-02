@@ -42,9 +42,10 @@
 			}
 
 			figure::before{
+				z-index:1;
 				content: "";
-				border-left: 3px solid black;
-				border-right: 3px solid black;
+				border-left: 3px solid white;
+				border-right: 3px solid white;
 				position: absolute;
 				left: 50%;
 				top:50%;
@@ -56,8 +57,8 @@
 
 			figure::after{
 				content: "";
-				border-top: 3px solid black;
-				border-bottom: 3px solid black;
+				border-top: 3px solid white;
+				border-bottom: 3px solid white;
 				position: absolute;
 				left: 50%;
 				top:50%;
@@ -74,13 +75,13 @@
 			}
 
 			figure:hover::before{
-				height:200px;
+				height:206px;
 			}
 			figure:hover::after{
 				width: 404px;
 			}
 			figure:hover img{
-				filter: blur(4px);
+				filter: blur(8px);
 			}
 
 
@@ -97,7 +98,7 @@
 	<body>
 		<div>
 			<figure>
-				<img src="http://wx2.sinaimg.cn/mw1024/4fe4f930gy1fdy43p5mmjj20qo0wwwpu.jpg">
+				<img src="chen.jpg">
 				<figcaption>
 					你不能做我的诗，正如我不能做你的梦
 				</figcaption>
