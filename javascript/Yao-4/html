@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>yao-4</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    main{
+      position: relative;
+      margin-left: 450px;
+    }
+    #main{
+      display: inline-block;
+      flex-wrap: wrap;
+    }
+    table{
+      width: 500px;
+      height: 500px;
+      border: 2px solid black;
+      position: relative;
+      border-color: gray;
+    }
+    td{
+      border: solid 1px black;
+      border-color: gray;
+    }
+    #core{
+      width: 80.233333px;
+      height: 80.233333px;
+      position: absolute;
+      left: 3px;
+      top: 3px;
+    }
+    .core1{
+      height: 30%;
+      background-color: blue;
+    }
+    .core2{
+      height: 70%;
+      background-color: red;
+    }
+    section{
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      height: 25px;
+    }
+    button{
+      width: 70px;
+      height: 25px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="main">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <div id="core">
+        <div class="core1">
+        </div>
+        <div class="core2">
+        </div>
+      </div>
+    </div>
+  </main>
+  <section>
+    <button id="tl">左转</button><button id="tr">右转</button><button id="tb">后转</button>
+    <button id="go">Go</button>
+  </section>
+</body>
+<script type="text/javascript">
+  var dirention = ["up","right","down","left"];
+  var count =0;
+  var degree = 0;
+  var tl =document.getElementById("tl");
+  var el = document.getElementById("core");
+  var go =document.getElementById("go");
+
+  function turnLeft(){
+    if (count===0) {count=3;}else{count-=1;}
+    degree-=90;
+    el.style.transform = 'rotate('+degree+'deg)';
+  }
+
+  function turnRight(){
+    if (count===3) {count=0;}else{count+=1;}
+    degree+=90;
+    el.style.transform = 'rotate('+degree+'deg)';
+  }
+
+  tl.addEventListener("click",turnLeft);
+  tr.addEventListener("click",turnRight);
+
+  function run(){
+    switch(count){
+      case 0:
+      var positionB =
+      parseFloat(window.getComputedStyle(el,null).bottom);
+      el.style.bottom= (positionB+81.333)+"px";
+      case 1:
+      var positionL =
+      parseFloat(window.getComputedStyle(el,null).left);
+      el.style.left= (positionL+81.333)+"px";
+      case 2:
+      var positionT =
+      parseFloat(window.getComputedStyle(el,null).top);
+      el.style.top= (positionT+81.333)+"px";
+      case 3:
+      var positionR =
+      parseFloat(window.getComputedStyle(el,null).right);
+      el.style.right= (positionR+81.333)+"px";
+    }
+  }
+
+  go.addEventListener("click",run);
+</script>
+</html>
