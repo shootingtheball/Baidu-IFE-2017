@@ -121,7 +121,6 @@
   </section>
 </body>
 <script type="text/javascript">
-  var dirention = ["up","right","down","left"];
   var count =0;
   var degree = 0;
   var tl =document.getElementById("tl");
@@ -149,18 +148,25 @@
       var positionB =
       parseFloat(window.getComputedStyle(el,null).bottom);
       el.style.bottom= (positionB+81.333)+"px";
+      break;
       case 1:
       var positionL =
       parseFloat(window.getComputedStyle(el,null).left);
       el.style.left= (positionL+81.333)+"px";
+      console.log(positionL);
+      break;
       case 2:
       var positionT =
       parseFloat(window.getComputedStyle(el,null).top);
       el.style.top= (positionT+81.333)+"px";
+            
+      break;
       case 3:
       var positionR =
       parseFloat(window.getComputedStyle(el,null).right);
+      console.log(positionR);
       el.style.right= (positionR+81.333)+"px";
+      break;
     }
   }
 
