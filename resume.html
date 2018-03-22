@@ -1,3 +1,5 @@
+
+
 <html>
         <head>
             <meta charset="UTF-8">
@@ -6,7 +8,8 @@
                 body{
                     background: #F5FFFA;
                     margin: 0;
-                    padding: 0
+                    padding: 0;
+ 
                 }
                 main{
                     padding: 10px 100px ;
@@ -36,16 +39,9 @@
                     text-align: center;
                     margin-top: 1rem
                 }
-                .resume{
-                    color: #777;
-                    text-align: center;
-                    margin-bottom: 1rem
-                }
                 .workHeader{
                     display: flex;
-                    justify-content: space-between;
-                    color: #ff6d1f;
-                    font-weight: bold
+                    justify-content: space-between
                 }
                 .tel{
                     margin-right: 2rem
@@ -84,10 +80,10 @@
                 }
                 .workTitle{
                     display: inline-block;
-                    
+                    color: #ff6d1f;
                     font-size: 1rem;
                     position: relative;
-                
+                    font-weight: bold
                 }
                 /*.workHeader::after{
                     content: "";
@@ -96,7 +92,6 @@
                     height: 1px;
                     background: #ccc;
                     width: 100%
-
                 }*/
                 .workDesc{
                     margin-left: 1.67rem
@@ -163,14 +158,6 @@
                     border-bottom-right-radius: 5px;
                     vertical-align: middle
                 }
-                .skill-six-bar{
-                    height: 12px;
-                    background: 	#FFDEAD;
-                    width: 50%;
-                    border-top-right-radius: 5px;
-                    border-bottom-right-radius: 5px;
-                    vertical-align: middle
-                }
                 .line~ul,.work-ul{
                     list-style: decimal
                 }
@@ -186,15 +173,14 @@
             <main>
                 <div class="face"></div>
                 <div class="title">你好，我是张廷玉</div>
-                <div class="detial"><span class="tel">Tel : 18703991536</span><span>E-mail : 18703991536@163.com</span></div>
-                <div class="resume">在线简历：https://shootingtheball.github.io/drag/resume.html</div>
+                <div class="detial"><span class="tel">Tel:18703991536</span><span>E-mail:zhang_tingyu@outlook.com</span></div>
                 <div class="desire">
                     <div class="itemTitle bold">基本信息</div>
                     <div class="line"></div>
                     <div>
                         <ul class="desire">
                             <li>求职意向：web前端工程师</li>
-                            <li>工作地点：北京</li>
+                            <li>目前工作地点：北京</li>
                             <li>性别：男</li>
                             <li>出生年月：93年8月</li>
                             <li>学历：河南农业大学-12级统招本科</li>
@@ -206,25 +192,28 @@
                     <div class="line"></div>
                     <div>
                         <ul class="project">
-                            <li>
-                                <a href="http://101.200.42.124/Vue-WebApp/dist/index.html">重写ONE移动端webApp-Vue2.0</a>
+
+                            <li class="wechat">
+                                <a href="http://m.zhongmispace.com">web移动端众蜜商城</a>
                                 <ul>
-                                    <li>单页应用。应用了Vue2.0、axios、ES6、CSS3等技术，基于真实的API，重写了App(之前的实在太丑)；</li>
-                                    <li>插件使用了axios、VueAwesomeSwiper和better-scroll；</li>
-                                    <li>实现了根据真实的API数据每天更新内容，弹出页，和根据月份生成页面等内容和功能；</li>
-                                    <li>关于组件，有基本的首页、列表页和详情页。footer和分类导航的二级页设计为共用部分，其他组件是差异部分；</li>
-                                    <li>采用阿里云服务器，windows镜像，demo：http://101.200.42.124/Vue-WebApp/dist/index.html （手机端查看）;</li>
-                                    <li>github：https://github.com/shootingtheball/Vue-WebApp </li>
+                                    <li>项目地址：http://m.zhongmispace.com/;</li>
+                                    <li>五色风马服装公司的移动端商城。技术栈Vue2.0，工具和框架用了Less、axios、mint-ui，SDK有weixin-js-sdk。主要模块：登录/注册模块、支付模块、购物车模块、订单地址模块、我的订单模块、优惠券模块、退出登录模块、搜索模块、一般的列表页模块，会员体系模块；</li>
+                                    <li>登录/注册模块和购物车模块都使用了Vuex和LocalStorge，也是本项目在本地存储数据的两个数据结构。登录模块主要使用了Vue-router的全局守卫beforeEach在跳转User页面前判断是否登录。
+                                        支付模块使用的是weixin-js-sdk中微信支付相关。商品分类下的列表模块使用了vue-router的动态路径参数；</li>
+                                    <li>与后端交互封装并使用了axios，增加了请求的baseURL、请求头、Token、request拦截器、respone拦截器、统一的错误处理等，不同的请求种类又封装在单独的js文件。</li>
+                                    <li>其他方面，采用了路由的异步加载，UI主要使用饿了么mint-ui等</li>
                                 </ul>
                             </li>
-                            <li class="wechat">
-                                <a href="https://github.com/shootingtheball/CSS3-project">3D轮播图及鼠标悬浮模糊效果-CSS3</a>
-                                <ul>
-                                    <li>前者应用了CSS3中transform、perspective、transform-style、animation属性和原生JavaScript技术，实现了点击可以自动旋转的轮播效果；</li>
-                                    <li>demo：https://shootingtheball.github.io/CSS3-project/index.html；</li>
-                                    <li>后者采用了CSS3中的-webkit-linear-gradient、text-fill-color等属性，实现了字体的流光渐变及边框扩展效果；</li>
-                                    <li>demo：https://shootingtheball.github.io/CSS3-project/blur/index.html。</li>
-                                </ul>
+                            <li>
+                                    <a href="http://seat.zowalk.com">好学伴系统学生端和家教端部分</a>
+                                    <ul>
+                                      <li>项目地址：http://seat.zowalk.com ，http://student.zowalk.com</li>
+                                        <li>一个包含老师端、家长端、学生端、家教端的学习系统。我负责学生端和家教端；</li>
+                                        <li>技术栈Vue2.0，工具采用了Less、axios，UI库是Element。学生端的主要模块有：登录模块、视频直播模块、作业提交模块、预约课程模块。
+                                            家教端模块主要包括：日历签到模块、预约模块、查看作业模块、直播模块。
+                                        </li>
+                                        <li>主要实现了辅导老师登录签到，通过百家云直播API进行直播，和直播以后的点评功能。</li>
+                                    </ul>
                             </li>
                         </ul>
                     </div>
@@ -233,31 +222,14 @@
                     <div class="itemTitle bold">工作经历</div>
                     <div class="line"></div>
                     <div class="comp">
-                        <div class="workHeader"><div class="workTitle">上海暖游天下互联网有限公司</div><div>Web前端工程师</div><div>2016.10-2017.10</div></div>
+                        <div class="workHeader"><div class="workTitle">北京德信立网络科技有限公司</div><div>Web前端工程师</div><div>2017.5-2018.3</div></div>
                         <ul class="work-ul">
-                            <li>专注于跨境旅游+购物的互联网旅游公司，人数100人左右。主要针对韩国市场。用户可以在公司web移动端和微信商城中购买韩国免税店商品，查询当地游购娱等信息。
-                                前端内容主要包含公司官网、活动页、web移动端网页、微信小程序等;</li>
+                            <li>专注于构建SASS化服务系统的公司，人数20人左右。为中小企业提供SASS化的服务系统和前端页面。主创员工来自阿里京东等;</li>
                             <li>
-                                <div>参与公司PC端官网页面的开发</div>
+                                <div>参与公司服务项目前端部分的开发</div>
                                 <ul>
-                                    <li>公司官网经历过三个版本，现版本包括主页、产品介绍、资讯、合作加盟、人才招聘等页面；</li>
-                                    <li>项目主要使用了jQuery技术，更好地完成了信息的展示，以及基本的交互；</li>
-                                    <li>我在项目中主要负责根据设计稿，分析页面组成，拆分成不同组件，利用html+css+JavaScript开发前端页面以及维护，包括新闻资讯、
-                                            关于我们、合作加盟、人才招聘几个页面的中文和韩语等版本。以及旧版本的单页内容；</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div>参与公司Web移动端页面的开发</div>
-                                <ul>
-                                    <li>web移动端实现了更多功能。基于选择的城市，用户可以在公司的web移动端查询当地的购物、美食、景点等信息，并撰写点评，类似大众点评。
-                                        也可以在限时秒杀模块购买闪购商品；
-                                    </li>
-                                    <li>项目主要使用了Vue技术栈、Stylus、ES6、CSS3等技术 ;</li>
-                                    <li>我主要负责项目中模块的设计和实现，主要的模块有商家信息列表模块、详情页模块、评论模块、购物车模块、优惠信息模块、footer模块等，大多为共用模块。信息列表模块、和详情页模块
-                                        会根据后台API数据渲染出信息，评论模块向后端添加、修改或删除评论内容，购物车模块统计用户选择的商品信息，并调用支付接口结算，footer模块利用vue-router把相应的组件映射到路由；
-                                    </li>
-                                    <li>在项目中对前后端分离有了一定理解。了解前端团队负责显示，后端团队负责数据及主要逻辑的职责分工，以及RESTful API基本设计原则。</li>
-                                    <li>项目打包使用了Webpack，使用Git做代码管理。在职期间了解了Node.js</li>
+                                    <li>开发并维护了五色风马服装公司的商城项目，和Q学伴项目两个终端的开发，和之前读书项目部分的维护工作；</li>
+                                    <li>项目主要使用了VUE构建单页应用，饿了么Element的UI库。和后端对接采用规范的restful-API接口；</li>
                                 </ul>
                             </li>
                         </ul>
@@ -266,10 +238,10 @@
                             <li>HTML5</li>
                             <li>JavaScript</li>
                             <li>Vue</li>
-                            <li>Stylus</li>
+                            <li>less</li>
                             <li>jQuery</li>
                             <li>ES6</li>
-                            <li>Webpack</li>
+                            <li>webpack</li>
                         </ul>
                     </div>
                 </div>
@@ -282,9 +254,8 @@
                                 <li><div class="skill-two-name">JavaScript</div><div class="skill-two-bar"></div></li>
                                 <li><div class="skill-three-name">Vue2.0</div><div class="skill-three-bar"></div></li>
                                 <li><div class="skill-four-name">jQuery</div><div class="skill-four-bar"></li>
-                                <li><div class="skill-five-name">stylus、bootstrap</div><div class="skill-five-bar"></li>
-                                <li><div class="skill-six-name">Webpack</div><div class="skill-six-bar"></div></li>
-                                <li><div class="skill-six-name">Node.js</div><div class="skill-six-bar"></div></li>
+                                <li><div class="skill-five-name">less、bootstrap、Element</div><div class="skill-five-bar"></li>
+                                <li><div class="skill-five-name">webpack</div><div class="skill-five-bar"></li>
                             </ul>
                         </div>
                     </div>
@@ -293,10 +264,9 @@
                         <div class="line"></div>
                         <ul>
                             <li>前端博客：http://www.jianshu.com/u/97d611176ff0；</li>
-                            <li>喜欢书籍：《你不知道的JS》、《黑客与画家》;</li>
-                            <li>个人定位：能成为独当一面的前端负责人，慢慢往其他方面拓展。即使在没有产品或缺少后端的情况下也能做好产品；</li>
-                            <li>工作态度：高效完成本职工作，在此基础上，与其他同事多交流学习，努力提升业务水平；</li>
-                            <li>我的优势：热爱前端，自学能力好，心态良好，情商与沟通能力良好，有一定的英文阅读能力；</li>          
+                            <li>个人定位：能成为独当一面的前端负责人，慢慢往其他方面拓展，比如node.js、ts等;</li>
+                            <li>工作态度：尽量高效完成本职工作，在此基础上，与其他同事多交流学习，提升业务水平；</li>
+                            <li>我的优势：热爱前端，自学能力好，心态良好，情商与沟通能力良好；</li>          
                         </ul>
                 </div>
             </main>
